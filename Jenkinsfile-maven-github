@@ -30,5 +30,10 @@ node {
            input message: 'Deploy this web app to production ?'
       }
    }
+   post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+        }
+    }
 }
    
