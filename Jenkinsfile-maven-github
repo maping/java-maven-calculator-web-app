@@ -19,8 +19,6 @@ node {
       }
    }
 
-   input 'Do you approve performance test?'
-   
    stage('Performance Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean verify"
@@ -29,3 +27,12 @@ node {
       }
    }
 }
+
+input 'Do you deploy web app?'
+
+node {
+   stage('Deploy') {
+      echo 'Deploy ...'
+   }
+}
+   
