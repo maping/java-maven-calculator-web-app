@@ -1,0 +1,45 @@
+node {
+   def mvnHome
+   stage('git clone') { 
+      git 'https://github.com/maping/java-maven-calculator-web-app.git'
+      // Get the Maven tool.
+      // ** NOTE: This 'M3' Maven tool must be configured
+      // **       in the global configuration.           
+      mvnHome = tool 'M3'
+   }
+   stage('JUnit Test') {
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' clean test"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" clean test/)
+      }
+   }
+   stage('Integration Test') {
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' integration-test"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" integration-test/)
+      }
+   }
+   stage('Performance Test') {
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' clean verify"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" clean verify/)
+      }
+   }
+   stage('Code Coverage') {
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' cobertura:cobertura"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" cobertura:cobertura/)
+      }
+   }
+   stage('deploy'){
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' cargo:run"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" cargo:run/)
+      }
+   }
+}
