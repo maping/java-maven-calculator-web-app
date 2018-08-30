@@ -25,11 +25,11 @@ node {
          bat(/"${mvnHome}\bin\mvn" clean verify/)
       }
    }
-   timeout(time: 10, unit: 'MINUTES') {
-           input message: 'Deploy this web app to production ?'
-   }
    stage('Deploy') {
-       echo 'Deploy...'      
+      timeout(time: 10, unit: 'MINUTES') {
+           input message: 'Deploy this web app to production ?'
+      }
+      echo 'Deploy...'
    }
 }
    
