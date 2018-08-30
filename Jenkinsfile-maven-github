@@ -28,11 +28,4 @@ node {
          bat(/"${mvnHome}\bin\mvn" clean verify/)
       }
    }
-   stage('Code Coverage') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' cobertura:cobertura"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" cobertura:cobertura/)
-      }
-   }  
 }
