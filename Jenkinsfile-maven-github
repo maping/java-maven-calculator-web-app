@@ -1,6 +1,6 @@
 node {
    def mvnHome
-   stage('git clone') { 
+   stage('Git Clone') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
@@ -34,12 +34,5 @@ node {
       } else {
          bat(/"${mvnHome}\bin\mvn" cobertura:cobertura/)
       }
-   }
-   stage('deploy'){
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' cargo:run"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" cargo:run/)
-      }
-   }
+   }  
 }
