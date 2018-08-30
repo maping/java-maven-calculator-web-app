@@ -18,7 +18,6 @@ node {
          bat(/"${mvnHome}\bin\mvn" integration-test/)
       }
    }
-
    stage('Load Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean verify"
@@ -26,9 +25,6 @@ node {
          bat(/"${mvnHome}\bin\mvn" clean verify/)
       }
    }
-}
-
-node {
    stage('Deploy') {
       timeout(time: 10, unit: 'MINUTES') {
           input message: 'Do you deploy this web app to production ?', ok: 'OK'
