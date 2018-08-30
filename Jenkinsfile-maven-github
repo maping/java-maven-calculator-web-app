@@ -28,7 +28,7 @@ node {
    }
 }
 
-input 'Do you deploy web app?'
+input message: 'Do you deploy this web app?', ok: 'OK'
 
 node {
    stage('Deploy') {
