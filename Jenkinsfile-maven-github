@@ -1,7 +1,7 @@
 node {
    def mvnHome = tool 'M3'
 
-   stage('Git Clone') { 
+   stage('Checkout Code') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
    }
    stage('JUnit Test') {
@@ -19,7 +19,7 @@ node {
       }
    }
 
-   stage('Performance Test') {
+   stage('Load Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean verify"
       } else {
@@ -28,11 +28,11 @@ node {
    }
 }
 
-input message: 'Do you deploy this web app?', ok: 'OK'
-
 node {
    stage('Deploy') {
-      echo 'Deploy ...'
+      timeout(time: 10, unit: 'MINUTES') {
+          input message: 'Do you deploy this web app to production ?', ok: 'OK'
+      }
    }
 }
    
