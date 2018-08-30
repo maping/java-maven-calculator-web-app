@@ -1,5 +1,6 @@
 node {
    def mvnHome = tool 'M3'
+
    stage('Git Clone') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
    }
@@ -17,6 +18,9 @@ node {
          bat(/"${mvnHome}\bin\mvn" integration-test/)
       }
    }
+
+   input 'Do you approve performance test?'
+   
    stage('Performance Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean verify"
