@@ -25,15 +25,11 @@ node {
          bat(/"${mvnHome}\bin\mvn" clean verify/)
       }
    }
-   stage('Deploy') {
-      timeout(time: 10, unit: 'MINUTES') {
+   timeout(time: 10, unit: 'MINUTES') {
            input message: 'Deploy this web app to production ?'
-      }
    }
-   post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-        }
-    }
+   stage('Deploy') {
+       echo 'Deploy...'      
+   }
 }
    
