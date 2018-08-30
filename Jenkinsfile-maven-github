@@ -27,7 +27,7 @@ node {
    }
    stage('Deploy') {
       timeout(time: 10, unit: 'MINUTES') {
-           input message: 'Do you deploy this web app to production ?'
+           input message: 'Deploy this web app to production ?'
       }
    }
 }
