@@ -7,8 +7,8 @@ JUnit test: mvn clean test
 
 Integration test：mvn clean integration-test
 
-Performance test：mvn clean verify
-
 Deploy to an existed Tomcat 8x: mvn cargo:run (you need change pom.xml, point to your Tomcat 8x)
+
+Performance test：mvn clean verify
 
 Build project site: mvn site
