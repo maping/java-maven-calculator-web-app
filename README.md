@@ -3,12 +3,12 @@ A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 ![image](https://github.com/maping/java-maven-calculator-web-app/raw/master/realworld-pipeline-flow.png)
 
-## Build
+## 1. Build
 ```shell
 mvn clean package
 ```
 
-## Run Locally
+### 2. Run Locally
 ```shell
 mvn jetty:run
 ```
