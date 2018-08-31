@@ -6,7 +6,7 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>Calculator Web</name>
-    <description>A Restful Calculator Web Application Writen By Java, Built By Maven</description>
+    <description>A Java Maven Calculator Web Application Writen By Java, Built By Maven, CI/CD By Jenkins</description>
     <url>http://maven.apache.org</url>
     
     <properties>
@@ -14,6 +14,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jersey-version>2.27</jersey-version>
+        <docker.image.prefix>reg.itmuch.com</docker.image.prefix>
     </properties>
     
     <dependencies>
