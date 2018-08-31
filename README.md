@@ -35,7 +35,7 @@ You need change pom.xml, point to your Tomcat 8x.
 mvn cargo:run
 ```
 ## Run Performance Test with JMeter
-You need install Jmeter first, and make sure Tomcat 8x is runing.
+You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
 mvn clean verify
 ```
