@@ -1,14 +1,45 @@
-# java-maven-calculator-web-app
-Java Calculator Web App, Build by Maven, Including JUnit Test, Integration Test，Performance Test, CI/CD by Jenkins etc.
+# A Java Maven Calculator Web App
+A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 ![image](https://github.com/maping/java-maven-calculator-web-app/raw/master/realworld-pipeline-flow.png)
 
-JUnit test: mvn clean test
+## Build
+```shell
+mvn clean package
+```
 
-Integration test：mvn clean integration-test
-
-Deploy to an existed Tomcat 8x: mvn cargo:run (you need change pom.xml, point to your Tomcat 8x)
-
-Performance test：mvn clean verify
-
-Build project site: mvn site
+## Run Locally
+```shell
+mvn jetty:run
+```
+To run in a different port
+```shell
+mvn jetty:run -Djetty.port=<your port>
+```
+## Debug Locally
+```shell
+set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n
+mvn jetty:run
+```
+## Run JUnit Test
+```shell
+mvn clean test
+```
+## Run Integration Test
+```shell
+mvn clean integration-test
+```
+## Deploy web app to an existed Tomcat 8x
+You need change pom.xml, point to your Tomcat 8x.
+```shell
+mvn cargo:run
+```
+## Run Performance Test with JMeter
+You need install Jmeter first, and make sure Tomcat 8x is runing.
+```shell
+mvn clean verify
+```
+## Build Project Site
+```shell
+mvn site
+```
