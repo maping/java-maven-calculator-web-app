@@ -12,6 +12,18 @@ mvn clean package
 ```shell
 mvn jetty:run
 ```
+By default, the jetty port is 9999, so you should visit
+
+http://localhost:9999/calculator/api/calculator/ping
+
+http://localhost:9999/calculator/api/calculator/add?x=8&y=26
+
+http://localhost:9999/calculator/api/calculator/sub?x=12&y=8
+
+http://localhost:9999/calculator/api/calculator/mul?x=11&y=8
+
+http://localhost:9999/calculator/api/calculator/div?x=12&y=12
+
 To run in a different port
 ```shell
 mvn jetty:run -Djetty.port=<your port>
