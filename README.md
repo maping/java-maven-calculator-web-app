@@ -8,7 +8,7 @@ A Java calculator web app, build by Maven, CI/CD by Jenkins.
 mvn clean package
 ```
 
-### 2. Run Locally
+## 2. Run Locally
 ```shell
 mvn jetty:run
 ```
@@ -28,19 +28,34 @@ To run in a different port
 ```shell
 mvn jetty:run -Djetty.port=<your port>
 ```
-## Debug Locally
+## 3. Debug Locally
 ```shell
 set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n
 mvn jetty:run
 ```
-## Run JUnit Test
+## 4. Run JUnit Test
 ```shell
 mvn clean test
 ```
-## Run Integration Test
+## 5. Run Integration Test
 ```shell
 mvn clean integration-test
 ```
+## 6. Deploy Your Web App to An Existed Tomcat 8x
+You need change pom.xml, point to your Tomcat 8x.
+```shell
+mvn cargo:run
+```
+## 7. Run Performance Test with JMeter
+You need install Jmeter first, and make sure your Tomcat 8x is runing.
+```shell
+mvn clean verify
+```
+## 8. Build Project Site
+```shell
+mvn site
+```
+
 ## Containerize Your Web App
 1. Build a docker image using `Dockerfile`:
    ```
@@ -51,17 +66,3 @@ mvn clean integration-test
    docker run --rm -p 8080:8080 calculator
    ```
 3. Then you can access the web app at http://localhost:8080 in browser
-## Deploy Your Web App to An Existed Tomcat 8x
-You need change pom.xml, point to your Tomcat 8x.
-```shell
-mvn cargo:run
-```
-## Run Performance Test with JMeter
-You need install Jmeter first, and make sure your Tomcat 8x is runing.
-```shell
-mvn clean verify
-```
-## Build Project Site
-```shell
-mvn site
-```
