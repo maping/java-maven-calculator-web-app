@@ -56,7 +56,7 @@ mvn clean verify
 mvn site
 ```
 
-## Containerize Your Web App
+## 9. Containerize Your Web App
 1. Build a docker image using `Dockerfile`:
    ```
    docker build -t calculator .
@@ -66,3 +66,15 @@ mvn site
    docker run --rm -p 8080:8080 calculator
    ```
 3. Then you can access the web app at http://localhost:8080 in browser
+
+## 10. Deploy to Your DockerHub RepoAzure Web App using Container Image
+1. Create a Container Registry on Azure
+2. Push your local image to ACR:
+   ```
+   docker login <Your-ACR-Login-Server> -u <Your-ACR-Username> -p <Your-ACR-Password>
+   docker tag calculator <<Your-ACR-Login-Server>/calculator
+   docker push <Your-ACR-Login-Server>/calculator
+   ```
+3. Create a Web App in Linux on Azure
+4. In Docker Container settings of Web App, fill in image name, server URL, username and password of your ACR.
+5. Save the changes and you'll be able to access the web app in a few seconds.
