@@ -12,7 +12,7 @@ mvn clean package
 ```shell
 mvn jetty:run
 ```
-By default, the jetty port is 9999, so you should visit
+By default, the jetty port is 9999, so you should visit following urls in browser:
 
 http://localhost:9999/calculator/api/calculator/ping
 
@@ -41,7 +41,17 @@ mvn clean test
 ```shell
 mvn clean integration-test
 ```
-## Deploy web app to an existed Tomcat 8x
+## Containerize Your Web App
+1. Build a docker image using `Dockerfile`:
+   ```
+   docker build -t calculator .
+   ```
+2. Run docker image locally
+   ```
+   docker run --rm -p 8080:8080 calculator
+   ```
+3. Then you can access the web app at http://localhost:8080 in browser
+## Deploy Your Web App to An Existed Tomcat 8x
 You need change pom.xml, point to your Tomcat 8x.
 ```shell
 mvn cargo:run
