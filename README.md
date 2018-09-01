@@ -3,6 +3,8 @@ A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 ![image](https://github.com/maping/java-maven-calculator-web-app/raw/master/realworld-pipeline-flow.png)
 
+image from https://jenkins.io/doc/book/pipeline/
+
 ## 1. Build
 ```shell
 mvn clean package
