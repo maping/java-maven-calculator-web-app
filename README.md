@@ -5,12 +5,14 @@ A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 image from https://jenkins.io/doc/book/pipeline/
 
-## 1. Build
+## 1. Manualy Run By Maven
+
+### 1.1 Build
 ```shell
 mvn clean package
 ```
 
-## 2. Run Locally
+### 1.2  Run Locally
 ```shell
 mvn jetty:run
 ```
@@ -30,30 +32,34 @@ To run in a different port
 ```shell
 mvn jetty:run -Djetty.port=<your port>
 ```
-## 3. Debug Locally
+### 1.3 Debug Locally
 ```shell
 set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n
 mvn jetty:run
 ```
-## 4. Run JUnit Test
+### 1.4 Run JUnit Test
 ```shell
 mvn clean test
 ```
-## 5. Run Integration Test
+### 1.5 Run Integration Test
 ```shell
 mvn clean integration-test
 ```
-## 6. Deploy Your Web App to An Existed Tomcat 8x
+### 1.6 Deploy Your Web App to An Existed Tomcat 8x
 You need change pom.xml, point to your Tomcat 8x.
 ```shell
 mvn cargo:run
 ```
-## 7. Run Performance Test with JMeter
+### 1.7 Run Performance Test with JMeter
 You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
 mvn clean verify
 ```
-## 8. Build Project Site
+To run in command line mode
+```shell
+./bin/jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
+```
+### 1.8 Build Project Site
 ```shell
 mvn site
 ```
