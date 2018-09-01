@@ -18,7 +18,7 @@ node {
          bat(/"${mvnHome}\bin\mvn" integration-test/)
       }
    }
-   stage('Load Test') {
+   stage('Performance Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop"
       } else {
