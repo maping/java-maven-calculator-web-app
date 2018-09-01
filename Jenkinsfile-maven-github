@@ -20,9 +20,9 @@ node {
    }
    stage('Load Test') {
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop -DskipTests"
+         sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop"
       } else {
-         bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop -DskipTests/)
+         bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop/)
       }
    }
    stage('Deploy') {
