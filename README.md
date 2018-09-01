@@ -5,7 +5,7 @@ A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 image from https://jenkins.io/doc/book/pipeline/
 
-## 1. Manualy Run By Maven
+## 1. Manualy Build, Test, and Deploy By Maven
 
 ### 1.1 Build
 ```shell
@@ -63,6 +63,14 @@ To run in command line mode
 ```shell
 mvn site
 ```
+## 2. Automaticly Build, Test, and Deploy By Jenkins
+
+### 2.1 Create and Configure a Freestyle Jenkins Project
+Execute every mvn goal one by one defined in Build Section Step: "Invoke top-level Maven targets"
+### 2.2 Create and Configure a Pipeline Jenkins Project
+Execute the Jenkins Pipeline Script File: Jenkinsfile-maven-github
+### 2.3 Create and Configure a Freestyle Jenkins Project
+Execute every az script one by one defined in Build Section Step: "Execue shell"
 
 ## 9. Containerize Your Web App
 1. Build a docker image using `Dockerfile`:
