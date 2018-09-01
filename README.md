@@ -55,7 +55,7 @@ You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
 mvn clean verify
 ```
-To run in command line mode
+To run in command line mode with parameters
 ```shell
 ./bin/jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
 ```
@@ -72,7 +72,7 @@ Execute the Jenkins Pipeline Script File: Jenkinsfile-maven-github
 ### 2.3 Create and Configure a Freestyle Jenkins Project
 Execute every az script one by one defined in Build Section Step: "Execue shell"
 
-## 9. Containerize Your Web App
+## 3. Containerize Your Web App
 1. Build a docker image using `Dockerfile`:
    ```
    docker build -t calculator .
