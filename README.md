@@ -85,9 +85,9 @@ Execute every az script one by one defined in Build Section Step: "Execue shell"
 
 4. Push your local image to your docker hub repositories
    ```
-   docker login -u <Your-Docker-Hub-Username> -p <Your-Docker-Hub-Password>
-   docker tag calculator <Your-Docker-Hub-Username>/calculator
-   docker push <Your-Docker-Hub-Username>/calculator
+   docker login -u <Your-Docker-ID> -p <Your-Docker-Password>
+   docker tag calculator <Your-Docker-ID>/calculator
+   docker push <Your-Docker-ID>/calculator
    ```
 ## 4. Deploy to Your DockerHub RepoAzure Web App using Container Image
 1. Create a Container Registry on Azure
