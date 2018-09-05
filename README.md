@@ -81,27 +81,24 @@ Execute every az script one by one defined in Build Section Step: "Execue shell"
    ```
    docker run --rm -p 8080:8080 calculator
    ```
-3. Then you can access the web app at http://localhost:8080 in browser
+3. Then you can access the web app at http://localhost:8080/api/calculator/ping in browser
 
-4. Push your local image to your docker hub repositories
+4. Stop container
+   ```
+   docker ps -a
+   docker stop <Container-ID>
+   ```
+5. Push your local image to your docker hub repositories
    ```
    docker login -u <Your-Docker-ID> -p <Your-Docker-Password>
    docker tag calculator <Your-Docker-ID>/calculator
    docker push <Your-Docker-ID>/calculator
-   ```
-## 4. Deploy to Your DockerHub RepoAzure Web App using Container Image
-1. Create a Container Registry on Azure
-2. Push your local image to Azure Container Registry:
-   ```
-   docker login <Your-ACR-Login-Server> -u <Your-ACR-Username> -p <Your-ACR-Password>
-   docker tag calculator <Your-ACR-Login-Server>/calculator
-   docker push <Your-ACR-Login-Server>/calculator
-   ```
-3. Create a Web App in Linux on Azure
-4. In Docker Container settings of Web App, fill in image name, server URL, username and password of your ACR.
-5. Save the changes and you'll be able to access the web app in a few seconds.
+   
+## 4. Deploy to Azure Web App using Container Image
+1. Create a Web App in Linux on Azure
+2. Save the changes and you'll be able to access the web app in a few seconds.
 
-## 10. Deploy to Your DockerHub RepoAzure Web App using Container Image
+## 5. Deploy to Your DockerHub RepoAzure Web App using Container Image
 1. Create a Container Registry on Azure
 2. Push your local image to ACR:
    ```
