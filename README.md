@@ -94,16 +94,16 @@ Execute every az script one by one defined in Build Section Step: "Execue shell"
    docker tag calculator <Your-Docker-ID>/calculator
    docker push <Your-Docker-ID>/calculator
    ```
-## 4. Deploy to Azure Web App using Container Image
+## 4. Deploy to Azure Web App using Container Image in Docker Hub
 1. Create a Web App in Linux on Azure
 2. Save the changes and you'll be able to access the web app in a few seconds.
 
-## 5. Deploy to Your DockerHub RepoAzure Web App using Container Image
+## 5. Deploy to Your Azure Web App using Container Image in ACR
 1. Create a Container Registry on Azure
 2. Push your local image to ACR:
    ```
    docker login <Your-ACR-Login-Server> -u <Your-ACR-Username> -p <Your-ACR-Password>
-   docker tag calculator <<Your-ACR-Login-Server>/calculator
+   docker tag calculator <Your-ACR-Login-Server>/calculator
    docker push <Your-ACR-Login-Server>/calculator
    ```
 3. Create a Web App in Linux on Azure
