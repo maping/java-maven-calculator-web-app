@@ -93,7 +93,7 @@ Execute every az script one by one defined in Build Section Step: "Execue shell"
    docker login -u <Your-Docker-ID> -p <Your-Docker-Password>
    docker tag calculator <Your-Docker-ID>/calculator
    docker push <Your-Docker-ID>/calculator
-   
+   ```
 ## 4. Deploy to Azure Web App using Container Image
 1. Create a Web App in Linux on Azure
 2. Save the changes and you'll be able to access the web app in a few seconds.
