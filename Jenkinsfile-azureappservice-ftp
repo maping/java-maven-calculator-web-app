@@ -15,9 +15,9 @@ node {
    }
    stage('Build') {
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' clean test"
+         sh "'${mvnHome}/bin/mvn' clean package"
       } else {
-         bat(/"${mvnHome}\bin\mvn" clean test/)
+         bat(/"${mvnHome}\bin\mvn" clean package/)
       }
    }
    stage('Deploy') {
