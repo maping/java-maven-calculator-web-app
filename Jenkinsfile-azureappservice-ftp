@@ -1,35 +1,47 @@
+import groovy.json.JsonSlurper
+
+def getFtpPublishProfile(def publishProfilesJson) {
+  def pubProfiles = new JsonSlurper().parseText(publishProfilesJson)
+  for (p in pubProfiles)
+    if (p['publishMethod'] == 'FTP')
+      return [url: p.publishUrl, username: p.userName, password: p.userPWD]
+}
+
 node {
    def mvnHome = tool 'M3'
 
-   stage('Checkout Code') { 
+   stage('Checkout') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
    }
-   stage('JUnit Test') {
+   stage('Build') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean test"
       } else {
          bat(/"${mvnHome}\bin\mvn" clean test/)
       }
    }
-   stage('Integration Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' integration-test"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" integration-test/)
-      }
-   }
-   stage('Performance Test') {
-      if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop/)
-      }
-   }
    stage('Deploy') {
-      timeout(time: 10, unit: 'MINUTES') {
-           input message: 'Deploy this web app to production ?'
+      def resourceGroup = 'mapingAppServiceRG' 
+      def webAppName = 'mapingcalculator'
+      def jenkins-sp = '029310de-62cf-45f9-a62b-3f56df679693'
+      
+      // login Azure
+      withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
+      sh '''
+        az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+        az account set -s $AZURE_SUBSCRIPTION_ID
+      '''
       }
-      echo 'Deploy...'
+      
+      // get publish settings
+      def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
+      def ftpProfile = getFtpPublishProfile pubProfilesJson
+      
+      // upload package
+      sh "curl -T target/calculator.war $ftpProfile.url/webapps/ROOT.war -u '$ftpProfile.username:$ftpProfile.password'"
+      
+      // log out
+      sh 'az logout'
    }
 }
    
