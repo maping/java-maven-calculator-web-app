@@ -49,7 +49,8 @@ node {
         // login Azure
         withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
         bat '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az login --service-principal -u ce28f6fd-b6ca-4921-b0a0-063bb7f55f98 -p Azure12345678! -t 00a8389b-6c91-4841-8c0a-60502f7dda74
+          //az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
         }
