@@ -23,7 +23,6 @@ node {
    stage('Deploy') {
       def resourceGroup = 'mapingAppServiceRG' 
       def webAppName = 'mapingcalculator'
-      def jenkins-sp = '029310de-62cf-45f9-a62b-3f56df679693'
       
       if (isUnix()) {
         // login Azure
@@ -43,7 +42,7 @@ node {
 
         // log out
         sh 'az logout'
-      } else { // TODO
+      } else {
         // login Azure
         withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
         bat '''
