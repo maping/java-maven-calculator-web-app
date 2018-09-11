@@ -13,6 +13,7 @@ node {
    stage('Checkout') { 
       git 'https://github.com/maping/java-maven-calculator-web-app.git'
    }
+   
    stage('Build') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' clean package"
@@ -20,6 +21,7 @@ node {
          bat(/"${mvnHome}\bin\mvn" clean package/)
       }
    }
+   
    stage('Deploy') {
       def resourceGroup = 'mapingAppServiceRG' 
       def webAppName = 'mapingcalculator'
@@ -42,6 +44,7 @@ node {
 
         // log out
         sh 'az logout'
+        
       } else {
         // login Azure
         withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
