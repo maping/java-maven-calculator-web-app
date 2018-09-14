@@ -176,6 +176,30 @@
                 </executions>                
             </plugin>    
             <plugin>
+                <groupId>com.microsoft.azure</groupId> 
+                <artifactId>azure-webapp-maven-plugin</artifactId> 
+                <version>1.4.0</version>
+                <configuration> 
+                    <resourceGroup>mapingAppServiceRG</resourceGroup> 
+                    <appServicePlanName>mapingAppServicePlan</appServicePlanName>
+                    <appName>mapinglinuxcalculator</appName> 
+                    <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
+                    <deploymentType>ftp</deploymentType>                     
+                    <resources> 
+                        <resource> 
+                            <directory>${project.basedir}/target</directory> 
+                            <targetPath>webapps</targetPath> 
+                            <includes> 
+                                <include>*.war</include> 
+                            </includes> 
+                            <excludes> 
+                                <exclude>*.xml</exclude> 
+                            </excludes> 
+                        </resource> 
+                    </resources> 
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
