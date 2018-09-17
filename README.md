@@ -67,6 +67,7 @@ mvn site
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
 Project name: MyJavaMavenCalculateWebApp
+
 Execute every mvn goal one by one defined in Build Section Step: "Invoke top-level Maven targets"
 ### 2.2 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
 Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
@@ -74,6 +75,7 @@ Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
 Project name: MyJavaMavenCalculateWebApp-AzureAppService
 ### 2.4 Create and Configure a Pipeline Jenkins Project
 Project name: MyJavaMavenCalculateWebApp-Pipeline
+
 Execute the Jenkins Pipeline Script File: Jenkinsfile
 
 ## 3. Containerize Your Web App
