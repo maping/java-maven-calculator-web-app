@@ -30,8 +30,10 @@ node {
         // login Azure
         withCredentials([azureServicePrincipal('40d0390e-a7d6-46ca-92c4-213b1192044f')]) {
         sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-          az account set -s $AZURE_SUBSCRIPTION_ID
+          //az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          //az account set -s $AZURE_SUBSCRIPTION_ID
+          az login --service-principal -u ce28f6fd-b6ca-4921-b0a0-063bb7f55f98 -p Azure12345678! -t 00a8389b-6c91-4841-8c0a-60502f7dda74
+          az account set -s ee75423d-af54-4c03-b9b6-dff79b5daaf4
         '''
         }
 
@@ -49,9 +51,10 @@ node {
         // login Azure
         withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
         bat '''
-          az login --service-principal -u ce28f6fd-b6ca-4921-b0a0-063bb7f55f98 -p Azure12345678! -t 00a8389b-6c91-4841-8c0a-60502f7dda74
           //az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
-          az account set -s $AZURE_SUBSCRIPTION_ID
+          //az account set -s $AZURE_SUBSCRIPTION_ID
+          az login --service-principal -u ce28f6fd-b6ca-4921-b0a0-063bb7f55f98 -p Azure12345678! -t 00a8389b-6c91-4841-8c0a-60502f7dda74
+          az account set -s ee75423d-af54-4c03-b9b6-dff79b5daaf4
         '''
         }
 
