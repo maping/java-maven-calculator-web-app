@@ -28,7 +28,7 @@ node {
       
       if (isUnix()) {
         // login Azure
-        withCredentials([azureServicePrincipal('029310de-62cf-45f9-a62b-3f56df679693')]) {
+        withCredentials([azureServicePrincipal('40d0390e-a7d6-46ca-92c4-213b1192044f')]) {
         sh '''
           az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
           az account set -s $AZURE_SUBSCRIPTION_ID
