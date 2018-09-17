@@ -66,11 +66,15 @@ mvn site
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
+Project name: MyJavaMavenCalculateWebApp
 Execute every mvn goal one by one defined in Build Section Step: "Invoke top-level Maven targets"
-### 2.2 Create and Configure a Pipeline Jenkins Project
-Execute the Jenkins Pipeline Script File: Jenkinsfile-maven-github
-### 2.3 Create and Configure a Freestyle Jenkins Project
-Execute every az script one by one defined in Build Section Step: "Execue shell"
+### 2.2 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
+Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
+### 2.3 Create and Configure a Freestyle Jenkins Project, using Azure App Service plugin
+Project name: MyJavaMavenCalculateWebApp-AzureAppService
+### 2.4 Create and Configure a Pipeline Jenkins Project
+Project name: MyJavaMavenCalculateWebApp-Pipeline
+Execute the Jenkins Pipeline Script File: Jenkinsfile
 
 ## 3. Containerize Your Web App
 1. Build a docker image using `Dockerfile`:
