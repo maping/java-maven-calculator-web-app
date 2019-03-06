@@ -8,13 +8,49 @@ image from https://jenkins.io/doc/book/pipeline/
 ## 1. Manualy Build, Test, and Deploy By Maven
 
 ### 1.1 Build
-```shell
-mvn clean package
+```console
+$ mvn clean package
+...
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.qianhong.calculator.CalculatorServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in com.qianhong.calculator.CalculatorServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] >>> cobertura-maven-plugin:2.7:cobertura (cobertura) > [cobertura]test @ java-maven-calculator-web-app >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ java-maven-calculator-web-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/maping/code/test/java-maven-calculator-web-app/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ java-maven-calculator-web-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- cobertura-maven-plugin:2.7:instrument (cobertura) @ java-maven-calculator-web-app ---
+...
+[INFO] Packaging webapp
+[INFO] Assembling webapp [java-maven-calculator-web-app] in [/Users/maping/code/test/java-maven-calculator-web-app/target/calculator]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/Users/maping/code/test/java-maven-calculator-web-app/src/main/webapp]
+[INFO] Webapp assembled in [71 msecs]
+[INFO] Building war: /Users/maping/code/test/java-maven-calculator-web-app/target/calculator.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.163 s
+[INFO] Finished at: 2019-03-06T21:35:57+08:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 ### 1.2  Run Locally
-```shell
-mvn jetty:run
+```console
+$ mvn jetty:run
 ```
 By default, the jetty port is 9999, so you should visit following urls in browser:
 
