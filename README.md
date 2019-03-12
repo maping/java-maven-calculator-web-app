@@ -14,30 +14,7 @@ Visit http://localhost:8081/ with admin/admin123.
 
 ### 1.2 Build
 ```console
-$ mvn clean package
-...
-[INFO] 
-[INFO] -------------------------------------------------------
-[INFO]  T E S T S
-[INFO] -------------------------------------------------------
-[INFO] Running com.qianhong.calculator.CalculatorServiceTest
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 s - in com.qianhong.calculator.CalculatorServiceTest
-[INFO] 
-[INFO] Results:
-[INFO] 
-[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
-[INFO] 
-[INFO] 
-[INFO] >>> cobertura-maven-plugin:2.7:cobertura (cobertura) > [cobertura]test @ java-maven-calculator-web-app >>>
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ java-maven-calculator-web-app ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /Users/maping/code/test/java-maven-calculator-web-app/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ java-maven-calculator-web-app ---
-[INFO] Nothing to compile - all classes are up to date
-[INFO] 
-[INFO] --- cobertura-maven-plugin:2.7:instrument (cobertura) @ java-maven-calculator-web-app ---
+$ mvn clean package -Dmaven.test.skip=true  
 ...
 [INFO] Packaging webapp
 [INFO] Assembling webapp [java-maven-calculator-web-app] in [/Users/maping/code/test/java-maven-calculator-web-app/target/calculator]
@@ -52,6 +29,14 @@ $ mvn clean package
 [INFO] Finished at: 2019-03-06T21:35:57+08:00
 [INFO] ------------------------------------------------------------------------
 ```
+>Explain: -DskipTests, not execute test case, but compile test case;
+
+-Dmaven.test.skip=true，不执行测试用例，也不编译测试用例类。
+
+不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下。
+
+一 使用maven.test.skip，不但跳过单元测试的运行，也跳过测试代码的编译。
+
 >Attention: Due to China GFW, you may fail when you build this project. Try it outside China GFW.
 
 ### 1.3  Run Locally
@@ -74,27 +59,22 @@ By default, the jetty port is 9999, so you should visit following urls in browse
 - http://localhost:9999/calculator/api/calculator/div?x=12&y=12
 
 To run in a different port, `mvn jetty:run -Djetty.port=<your port>`
+To debug locally, `set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n`, then `mvn jetty:run`.
 
-
-### 1.4 Debug Locally
-```shell
-$ set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n
-$ mvn jetty:run
-```
-### 1.5 Run JUnit Test
+### 1.4 Run JUnit Test
 ```shell
 mvn clean test
 ```
-### 1.6 Run Integration Test
+### 1.5 Run Integration Test
 ```shell
 mvn clean integration-test
 ```
-### 1.7 Deploy Your Web App to An Existed Tomcat 8x
+### 1.6 Deploy Your Web App to An Existed Tomcat 8x
 You need change pom.xml, point to your Tomcat 8x.
 ```shell
 mvn cargo:run
 ```
-### 1.8 Run Performance Test with JMeter
+### 1.7 Run Performance Test with JMeter
 You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
 mvn clean verify
@@ -103,7 +83,7 @@ To run in command line mode with parameters
 ```shell
 ./bin/jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
 ```
-### 1.9 Build Project Site
+### 1.8 Build Project Site
 ```shell
 mvn site
 ```
