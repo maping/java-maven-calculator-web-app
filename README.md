@@ -52,22 +52,26 @@ $ mvn clean package
 [INFO] Finished at: 2019-03-06T21:35:57+08:00
 [INFO] ------------------------------------------------------------------------
 ```
+>Attention: Due to China GFW, you may fail when you build this project. Try it outside China GFW.
 
 ### 1.3  Run Locally
 ```console
 $ mvn jetty:run
+[INFO] Scanning elapsed time=147ms
+[INFO] DefaultSessionIdManager workerName=node0
+[INFO] No SessionScavenger set, using defaults
+[INFO] node0 Scavenging every 660000ms
+[INFO] Started o.e.j.m.p.JettyWebAppContext@48535004{Calculator Web,/calculator,file:///Users/maping/code/java-maven-calculator-web-app/src/main/webapp/,AVAILABLE}{file:///Users/maping/code/java-maven-calculator-web-app/src/main/webapp/}
+[INFO] Started ServerConnector@580fd26b{HTTP/1.1,[http/1.1]}{0.0.0.0:9999}
+[INFO] Started @3779ms
+[INFO] Started Jetty Server
 ```
 By default, the jetty port is 9999, so you should visit following urls in browser:
-
-http://localhost:9999/calculator/api/calculator/ping
-
-http://localhost:9999/calculator/api/calculator/add?x=8&y=26
-
-http://localhost:9999/calculator/api/calculator/sub?x=12&y=8
-
-http://localhost:9999/calculator/api/calculator/mul?x=11&y=8
-
-http://localhost:9999/calculator/api/calculator/div?x=12&y=12
+- http://localhost:9999/calculator/api/calculator/ping
+- http://localhost:9999/calculator/api/calculator/add?x=8&y=26
+- http://localhost:9999/calculator/api/calculator/sub?x=12&y=8
+- http://localhost:9999/calculator/api/calculator/mul?x=11&y=8
+- http://localhost:9999/calculator/api/calculator/div?x=12&y=12
 
 To run in a different port
 ```shell
