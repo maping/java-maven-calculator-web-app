@@ -102,7 +102,7 @@ By default, the tomcat port is 8080, so you should visit following urls in brows
 - http://localhost:8080/calculator/api/calculator/div?x=12&y=12
 
 ### 1.7 Run Performance Test with JMeter
-You need install Jmeter first, and make sure your Tomcat 8x is runing.
+>Important: make sure your Tomcat 8x is runing, before you run performance test.
 ```shell
 $ mvn clean verify
 [INFO] -------------------------------------------------------
@@ -130,12 +130,23 @@ $ mvn clean verify
 [INFO] ------------------------------------------------------------------------
 [INFO] Shutdown detected, destroying JMeter process...
 ```
-To run in command line mode with parameters
-```shell
-./bin/jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
+### 1.8 Start Jmeter GUI (Optional)
+If you want to see the test plan, you need install Jmeter, then start Jmeter GUI and open java-maven-calculator-web-app/src/test/jmeter/CalculatorTestPlan.jmx.
+```console
+$ cd ~/apache/jmeter/bin
+$ ./jmeter 
 ```
 
-### 1.8 Build Project Site
+$ cd ~/apache/jmeter/bin
+
+Don't use GUI mode for load testing !, only for Test creation and Test debugging.
+For load testing, use CLI Mode (was NON GUI):
+```shell
+$ cd ~/apache/jmeter/bin
+$ ./jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
+```
+
+### 1.9 Build Project Site
 ```shell
 mvn site
 ```
