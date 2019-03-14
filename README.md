@@ -29,13 +29,7 @@ $ mvn clean package -Dmaven.test.skip=true
 [INFO] Finished at: 2019-03-06T21:35:57+08:00
 [INFO] ------------------------------------------------------------------------
 ```
->Explain: -DskipTests, not execute test case, but compile test case;
-
--Dmaven.test.skip=true，不执行测试用例，也不编译测试用例类。
-
-不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下。
-
-一 使用maven.test.skip，不但跳过单元测试的运行，也跳过测试代码的编译。
+>Explain: -DskipTests, not execute test case, but compile test case; -Dmaven.test.skip=true，not compile test case, neither execute test case.
 
 >Attention: Due to China GFW, you may fail when you build this project. Try it outside China GFW.
 
