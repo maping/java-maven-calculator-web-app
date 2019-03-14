@@ -56,6 +56,8 @@ To run in a different port, `mvn jetty:run -Djetty.port=<Your-Port>`.
 
 To debug locally, `set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n`, then `mvn jetty:run`.
 
+To stop Jetty Server, press Control-C.
+
 ### 1.4 Run JUnit Test
 ```shell
 $ mvn clean test
@@ -71,17 +73,38 @@ $ mvn clean test
 ```
 ### 1.5 Run Integration Test
 ```shell
-mvn clean integration-test
+$ mvn clean integration-test
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.qianhong.calculator.CalculatorServiceIT
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.782 s - in com.qianhong.calculator.CalculatorServiceIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 ```
 ### 1.6 Deploy Your Web App to An Existed Tomcat 8x
-You need change pom.xml, point to your Tomcat 8x.
+Please install a Tomcat8x on your machine, after that, you need change pom.xml, point to your own Tomcat 8x.
 ```shell
-mvn cargo:run
+$ mvn cargo:run
+[INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.495 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+[INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.501 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+[INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.503 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 2012 ms
+[INFO] [talledLocalContainer] Tomcat 8.x started on port [8080]
+[INFO] Press Ctrl-C to stop the container...
 ```
+By default, the tomcat port is 8080, so you should visit following urls in browser:
+- http://localhost:8080/calculator/api/calculator/ping
+- http://localhost:8080/calculator/api/calculator/add?x=8&y=26
+- http://localhost:8080/calculator/api/calculator/sub?x=12&y=8
+- http://localhost:8080/calculator/api/calculator/mul?x=11&y=8
+- http://localhost:8080/calculator/api/calculator/div?x=12&y=12
+
 ### 1.7 Run Performance Test with JMeter
 You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
-mvn clean verify
+$ mvn clean verify
 ```
 To run in command line mode with parameters
 ```shell
