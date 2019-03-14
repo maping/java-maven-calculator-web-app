@@ -105,6 +105,28 @@ By default, the tomcat port is 8080, so you should visit following urls in brows
 You need install Jmeter first, and make sure your Tomcat 8x is runing.
 ```shell
 $ mvn clean verify
+[INFO] -------------------------------------------------------
+[INFO]  P E R F O R M A N C E    T E S T S
+[INFO] -------------------------------------------------------
+[INFO]  
+[INFO]  
+[INFO] Executing test: CalculatorTestPlan.jmx
+[INFO] Starting process with:[java, -Xms512M, -Xmx512M, -jar, ApacheJMeter-4.0.jar, -d, /Users/maping/code/java-maven-calculator-web-app/target/jmeter, -e, -j, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/logs/CalculatorTestPlan.jmx.log, -l, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/results/20190314-CalculatorTestPlan.csv, -n, -o, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/reports/CalculatorTestPlan_20190314_103301, -t, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx]
+[INFO] Creating summariser <summary>
+[INFO] Created the tree successfully using /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx
+[INFO] Starting the test @ Thu Mar 14 10:33:12 CST 2019 (1552530792939)
+[INFO] Waiting for possible Shutdown/StopTestNow/Heapdump message on port 4445
+[INFO] summary =     50 in 00:00:09 =    5.5/s Avg:     1 Min:     0 Max:    60 Err:    50 (100.00%)
+[INFO] Tidying up ...    @ Thu Mar 14 10:33:22 CST 2019 (1552530802421)
+[INFO] ... end of run
+[INFO] Completed Test: /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  58.849 s
+[INFO] Finished at: 2019-03-14T10:33:23+08:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Shutdown detected, destroying JMeter process...
 ```
 To run in command line mode with parameters
 ```shell
