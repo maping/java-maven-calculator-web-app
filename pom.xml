@@ -153,11 +153,11 @@
                 <configuration>
                     <container>
                         <containerId>tomcat8x</containerId>
-                        <home>C:\apache-tomcat-8.0.53</home>
+                        <home>/Users/maping/apache/tomcat</home>
                     </container>
                     <configuration>
                         <type>existing</type>
-                        <home>C:\apache-tomcat-8.0.53</home>
+                        <home>/Users/maping/apache/tomcat</home>
                     </configuration>                   
                 </configuration>
             </plugin>     
