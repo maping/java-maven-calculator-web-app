@@ -111,20 +111,22 @@ $ mvn clean verify
 [INFO]  
 [INFO]  
 [INFO] Executing test: CalculatorTestPlan.jmx
-[INFO] Starting process with:[java, -Xms512M, -Xmx512M, -jar, ApacheJMeter-4.0.jar, -d, /Users/maping/code/java-maven-calculator-web-app/target/jmeter, -e, -j, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/logs/CalculatorTestPlan.jmx.log, -l, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/results/20190314-CalculatorTestPlan.csv, -n, -o, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/reports/CalculatorTestPlan_20190314_103301, -t, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx]
+[INFO] Starting process with:[java, -Xms512M, -Xmx512M, -jar, ApacheJMeter-4.0.jar, -d, /Users/maping/code/java-maven-calculator-web-app/target/jmeter, -e, -j, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/logs/CalculatorTestPlan.jmx.log, -l, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/results/20190314-CalculatorTestPlan.csv, -n, -o, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/reports/CalculatorTestPlan_20190314_104015, -t, /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx]
 [INFO] Creating summariser <summary>
 [INFO] Created the tree successfully using /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx
-[INFO] Starting the test @ Thu Mar 14 10:33:12 CST 2019 (1552530792939)
+[INFO] Starting the test @ Thu Mar 14 10:40:26 CST 2019 (1552531226967)
 [INFO] Waiting for possible Shutdown/StopTestNow/Heapdump message on port 4445
-[INFO] summary =     50 in 00:00:09 =    5.5/s Avg:     1 Min:     0 Max:    60 Err:    50 (100.00%)
-[INFO] Tidying up ...    @ Thu Mar 14 10:33:22 CST 2019 (1552530802421)
+[INFO] summary +     16 in 00:00:03 =    5.2/s Avg:    32 Min:     2 Max:   288 Err:     0 (0.00%) Active: 1 Started: 4 Finished: 3
+[INFO] summary +     34 in 00:00:06 =    5.7/s Avg:     2 Min:     1 Max:     5 Err:     0 (0.00%) Active: 0 Started: 10 Finished: 10
+[INFO] summary =     50 in 00:00:09 =    5.5/s Avg:    12 Min:     1 Max:   288 Err:     0 (0.00%)
+[INFO] Tidying up ...    @ Thu Mar 14 10:40:36 CST 2019 (1552531236412)
 [INFO] ... end of run
 [INFO] Completed Test: /Users/maping/code/java-maven-calculator-web-app/target/jmeter/testFiles/CalculatorTestPlan.jmx
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  58.849 s
-[INFO] Finished at: 2019-03-14T10:33:23+08:00
+[INFO] Total time:  59.487 s
+[INFO] Finished at: 2019-03-14T10:40:37+08:00
 [INFO] ------------------------------------------------------------------------
 [INFO] Shutdown detected, destroying JMeter process...
 ```
@@ -132,6 +134,7 @@ To run in command line mode with parameters
 ```shell
 ./bin/jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
 ```
+
 ### 1.8 Build Project Site
 ```shell
 mvn site
