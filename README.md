@@ -52,12 +52,22 @@ By default, the jetty port is 9999, so you should visit following urls in browse
 - http://localhost:9999/calculator/api/calculator/mul?x=11&y=8
 - http://localhost:9999/calculator/api/calculator/div?x=12&y=12
 
-To run in a different port, `mvn jetty:run -Djetty.port=<your port>`
+To run in a different port, `mvn jetty:run -Djetty.port=<Your-Port>`.
+
 To debug locally, `set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=8000,suspend=n`, then `mvn jetty:run`.
 
 ### 1.4 Run JUnit Test
 ```shell
-mvn clean test
+$ mvn clean test
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.qianhong.calculator.CalculatorServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in com.qianhong.calculator.CalculatorServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 ```
 ### 1.5 Run Integration Test
 ```shell
