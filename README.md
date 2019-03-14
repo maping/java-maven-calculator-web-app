@@ -136,12 +136,13 @@ If you want to see the test plan, you need install Jmeter, then start Jmeter GUI
 $ cd ~/apache/jmeter/bin
 $ ./jmeter 
 ```
+![image](./jmeter-test-plan-01.png)
 
-$ cd ~/apache/jmeter/bin
+![image](./jmeter-test-plan-02.png)
 
 Don't use GUI mode for load testing !, only for Test creation and Test debugging.
 For load testing, use CLI Mode (was NON GUI):
-```shell
+```console
 $ cd ~/apache/jmeter/bin
 $ ./jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
 ```
