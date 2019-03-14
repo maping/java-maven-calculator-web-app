@@ -1,7 +1,7 @@
 # A Java Maven Calculator Web App
 A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
-![image](./realworld-pipeline-flow.png)
+![image](realworld-pipeline-flow.png)
 
 ## 1. Manualy Build, Test, and Deploy By Maven
 
@@ -136,9 +136,9 @@ If you want to see the test plan, you need install Jmeter, then start Jmeter GUI
 $ cd ~/apache/jmeter/bin
 $ ./jmeter 
 ```
-![image](./jmeter-test-plan-01.png)
+![image](jmeter-test-plan-01.png)
 
-![image](./jmeter-test-plan-02.png)
+![image](jmeter-test-plan-02.png)
 
 Don't use GUI mode for load testing !, only for Test creation and Test debugging.
 For load testing, use CLI Mode (was NON GUI):
