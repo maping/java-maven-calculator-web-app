@@ -157,9 +157,12 @@ Open performance test result csv file:
 ![image](jmeter-test-result-01.png)
 
 ### 1.9 Build Project Site
-```shell
-mvn site
+```console
+$ mvn site
 ```
+open java-maven-calculator-web-app/target/site/index.html
+![image](mvn-site-01.png)
+
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
