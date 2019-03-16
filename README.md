@@ -140,12 +140,21 @@ $ ./jmeter
 
 ![image](jmeter-test-plan-02.png)
 
-Don't use GUI mode for load testing !, only for Test creation and Test debugging.
-For load testing, use CLI Mode (was NON GUI):
+Don't use GUI mode for load testing !, only for Test creation and Test debugging.For load testing, use CLI Mode:
 ```console
 $ cd ~/apache/jmeter/bin
-$ ./jmeter.sh -n -t ./tests/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ./results/calculator_`date +'%y%m%d%H%M%S'`.cs
+$ ./jmeter.sh -n -t ~/code/java-maven-calculator-web-app/src/test/jmeter/CalculatorTestPlan.jmx -Jusers=20 -Jloop=2 -l ~/code/java-maven-calculator-web-app/src/test/jmeter/calculator_`date +'%y%m%d%H%M%S'`.csv
+Creating summariser <summary>
+Created the tree successfully using /Users/maping/code/java-maven-calculator-web-app/src/test/jmeter/CalculatorTestPlan.jmx
+Starting the test @ Sat Mar 16 22:07:52 CST 2019 (1552745272072)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +    161 in 00:00:08 =   19.9/s Avg:     1 Min:     1 Max:    52 Err:     0 (0.00%) Active: 1 Started: 17 Finished: 16
+summary +     39 in 00:00:02 =   25.7/s Avg:     1 Min:     0 Max:     3 Err:     0 (0.00%) Active: 0 Started: 20 Finished: 20
+summary =    200 in 00:00:10 =   20.8/s Avg:     1 Min:     0 Max:    52 Err:     0 (0.00%)
+Tidying up ...    @ Sat Mar 16 22:08:01 CST 2019 (1552745281987)
 ```
+Open performance test result csv file:
+
 
 ### 1.9 Build Project Site
 ```shell
