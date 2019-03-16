@@ -136,7 +136,7 @@ If you want to see the test plan, you need install Jmeter, then start Jmeter GUI
 $ cd ~/apache/jmeter/bin
 $ ./jmeter 
 ```
-![image](jmeter-test-plan-01.png)
+![image](jmeter-test-plan-02.png)
 
 ![image](jmeter-test-plan-02.png)
 
@@ -154,7 +154,7 @@ summary =    200 in 00:00:10 =   20.8/s Avg:     1 Min:     0 Max:    52 Err:   
 Tidying up ...    @ Sat Mar 16 22:08:01 CST 2019 (1552745281987)
 ```
 Open performance test result csv file:
-
+![image](jmeter-test-result-01.png)
 
 ### 1.9 Build Project Site
 ```shell
