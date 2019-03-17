@@ -180,7 +180,7 @@ Execute the Jenkins Pipeline Script File: Jenkinsfile
 
 ## 3. Containerize Your Web App
 
-### 3.1. Build a docker image using `Dockerfile`:
+### 3.1. Build a docker image using Dockerfile:
 ```console
 $ docker build -t calculator .
 Sending build context to Docker daemon  13.53MB
@@ -202,7 +202,7 @@ Successfully tagged calculator:latest
 ```console
 $ docker run --rm -p 8181:8080 calculator
 ```
->Explain: --rm means delete the container after stop it.
+>Explain: --rm means delete the container after stopping it.
 
 Access the web app at http://localhost:8181/api/calculator/ping in browser.
 
