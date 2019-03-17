@@ -59,7 +59,7 @@ To debug locally, `set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y
 To stop Jetty Server, press Control-C.
 
 ### 1.4 Run JUnit Test
-```shell
+```console
 $ mvn clean test
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
@@ -72,7 +72,7 @@ $ mvn clean test
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 ```
 ### 1.5 Run Integration Test
-```shell
+```console
 $ mvn clean integration-test
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
@@ -86,7 +86,7 @@ $ mvn clean integration-test
 ```
 ### 1.6 Deploy Your Web App to An Existed Tomcat 8x
 Please install a Tomcat8x on your machine, after that, you need change pom.xml, point to your own Tomcat 8x.
-```shell
+```console
 $ mvn cargo:run
 [INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.495 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 [INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.501 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
@@ -103,7 +103,7 @@ By default, the tomcat port is 8080, so you should visit following urls in brows
 
 ### 1.7 Run Performance Test with JMeter
 >Important: make sure your Tomcat 8x is runing, before you run performance test.
-```shell
+```console
 $ mvn clean verify
 [INFO] -------------------------------------------------------
 [INFO]  P E R F O R M A N C E    T E S T S
@@ -179,27 +179,44 @@ Project name: MyJavaMavenCalculateWebApp-Pipeline
 Execute the Jenkins Pipeline Script File: Jenkinsfile
 
 ## 3. Containerize Your Web App
-1. Build a docker image using `Dockerfile`:
-   ```
-   docker build -t calculator .
-   ```
-2. Run docker image locally
-   ```
-   docker run --rm -p 8080:8080 calculator
-   ```
-3. Then you can access the web app at http://localhost:8080/api/calculator/ping in browser
 
-4. Stop container
-   ```
-   docker ps -a
-   docker stop <Container-ID>
-   ```
-5. Push your local image to your docker hub repositories
-   ```
-   docker login -u <Your-Docker-ID> -p <Your-Docker-Password>
-   docker tag calculator <Your-Docker-ID>/calculator
-   docker push <Your-Docker-ID>/calculator
-   ```
+### 3.1. Build a docker image using `Dockerfile`:
+```console
+$ docker build -t calculator .
+Sending build context to Docker daemon  13.53MB
+Step 1/4 : FROM tomcat
+ ---> 48dd385504b1
+Step 2/4 : MAINTAINER Ma Ping
+ ---> Using cache
+ ---> 3ae09eb166a2
+Step 3/4 : RUN rm -rf $CATALINA_HOME/webapps/ROOT
+ ---> Using cache
+ ---> 20a183105b0e
+Step 4/4 : COPY target/calculator.war $CATALINA_HOME/webapps/ROOT.war
+ ---> 42b9363d582d
+Successfully built 42b9363d582d
+Successfully tagged calculator:latest
+```
+
+### 3.2. Run docker image locally
+```console
+$ docker run --rm -p 8181:8080 calculator
+```
+Access the web app at http://localhost:8181/api/calculator/ping in browser
+
+### 3.3. Stop container
+```console
+$ docker ps -a
+$ docker stop <Container-ID>
+```
+
+### 3.4. Push your local image to your docker hub repositories
+```console
+$ docker login -u <Your-Docker-ID> -p <Your-Docker-Password>
+$ docker tag calculator <Your-Docker-ID>/calculator
+$ docker push <Your-Docker-ID>/calculator
+```
+
 ## 4. Deploy to Azure Web App using Container Image in Docker Hub
 1. Create a Web App in Linux on Azure
 2. Save the changes and you'll be able to access the web app in a few seconds.
