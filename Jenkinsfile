@@ -18,11 +18,20 @@ node {
          bat(/"${mvnHome}\bin\mvn" integration-test/)
       }
    }
+ /*
    stage('Performance Test') {
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' cargo:start verify cargo:stop"
       } else {
          bat(/"${mvnHome}\bin\mvn" cargo:start verify cargo:stop/)
+      }
+   }
+  */
+  stage('Performance Test') {
+      if (isUnix()) {
+         sh "'${mvnHome}/bin/mvn' verify"
+      } else {
+         bat(/"${mvnHome}\bin\mvn" verify/)
       }
    }
    stage('Deploy') {
