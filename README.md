@@ -167,8 +167,12 @@ open java-maven-calculator-web-app/target/site/index.html
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
 Project name: MyJavaMavenCalculateWebApp
-
 Execute every mvn goal one by one defined in Build Section Step: "Invoke top-level Maven targets"
+
+![image](jenkins-mvn-01.png)
+
+![image](jenkins-mvn-02.png)
+
 ### 2.2 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
 Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
 ### 2.3 Create and Configure a Freestyle Jenkins Project, using Azure App Service plugin
