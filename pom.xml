@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qianhong.javawebapp</groupId>
     <artifactId>java-maven-calculator-web-app</artifactId>
@@ -8,14 +8,27 @@
     <name>Calculator Web</name>
     <description>A Java Maven Calculator Web Application Writen By Java, Built By Maven, CI/CD By Jenkins</description>
     <url>http://maven.apache.org</url>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jersey-version>2.27</jersey-version>
     </properties>
-    
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -50,10 +63,10 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <finalName>calculator</finalName>
-      
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -68,8 +81,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
-            </plugin>  
-            <plugin> 
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
@@ -87,12 +100,12 @@
                             </formats>
                         </configuration>
                     </execution>
-                </executions>                
-            </plugin>                 
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.11.v20180605</version>                
+                <version>9.4.11.v20180605</version>
                 <configuration>
                     <webApp>
                         <contextPath>/calculator</contextPath>
@@ -158,9 +171,9 @@
                     <configuration>
                         <type>existing</type>
                         <home>/Users/maping/apache/tomcat</home>
-                    </configuration>                   
+                    </configuration>
                 </configuration>
-            </plugin>     
+            </plugin>
             <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
@@ -173,88 +186,88 @@
                             <goal>jmeter</goal>
                         </goals>
                     </execution>
-                </executions>                
-            </plugin>    
+                </executions>
+            </plugin>
             <plugin>
-                <groupId>com.microsoft.azure</groupId> 
-                <artifactId>azure-webapp-maven-plugin</artifactId> 
+                <groupId>com.microsoft.azure</groupId>
+                <artifactId>azure-webapp-maven-plugin</artifactId>
                 <version>1.4.0</version>
-                <configuration> 
-                    <resourceGroup>mapingAppServiceRG</resourceGroup> 
+                <configuration>
+                    <resourceGroup>mapingAppServiceRG</resourceGroup>
                     <appServicePlanName>mapingAppServicePlan</appServicePlanName>
-                    <appName>mapinglinuxcalculator</appName> 
+                    <appName>mapinglinuxcalculator</appName>
                     <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
-                    <deploymentType>ftp</deploymentType>                     
-                    <resources> 
-                        <resource> 
-                            <directory>${project.basedir}/target</directory> 
-                            <targetPath>webapps</targetPath> 
-                            <includes> 
-                                <include>*.war</include> 
-                            </includes> 
-                            <excludes> 
-                                <exclude>*.xml</exclude> 
-                            </excludes> 
-                        </resource> 
-                    </resources> 
+                    <deploymentType>ftp</deploymentType>
+                    <resources>
+                        <resource>
+                            <directory>${project.basedir}/target</directory>
+                            <targetPath>webapps</targetPath>
+                            <includes>
+                                <include>*.war</include>
+                            </includes>
+                            <excludes>
+                                <exclude>*.xml</exclude>
+                            </excludes>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
-            </plugin> 
+            </plugin>
         </plugins>
     </build>
-    
+
     <reporting>
-        <plugins>                
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
-            <plugin>                
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>                
+                <version>3.0.1</version>
             </plugin>
-            <plugin> 
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>2.5</version>
-            </plugin>    
-            <plugin> 
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>              
-            </plugin>   
-            <plugin> 
+                <version>3.0.0</version>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.10.0</version>
                 <configuration>
                     <skipEmptyReport>false</skipEmptyReport>
                 </configuration>
-            </plugin> 
-            <plugin> 
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7</version>                
+                <version>2.7</version>
                 <reportSets>
                     <reportSet>
                         <reports>
                             <report>cobertura</report>
                         </reports>
                     </reportSet>
-                </reportSets>     
-            </plugin>       
+                </reportSets>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.22.0</version>      
-            </plugin>            
-        </plugins>       
+                <version>2.22.0</version>
+            </plugin>
+        </plugins>
     </reporting>
-    
+
 </project>
