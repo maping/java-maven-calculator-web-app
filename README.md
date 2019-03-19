@@ -170,10 +170,9 @@ $ mvn clean deploy
 
 Visit http://localhost:8081/ with admin/admin123.
 
-Input calculator, 
+Search calculator, click Browse SNAPSHOT(s)
 
-open java-maven-calculator-web-app/target/site/index.html
-![image](mvn-site-01.png)
+![image](nexus-browse-01.png)
 
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
