@@ -163,24 +163,44 @@ $ mvn site
 open java-maven-calculator-web-app/target/site/index.html
 ![image](mvn-site-01.png)
 
+### 1.10 Deploy Artifactory to Nexus (Optional)
+```console
+$ mvn clean deploy
+```
+
+Visit http://localhost:8081/ with admin/admin123.
+
+Input calculator, 
+
+open java-maven-calculator-web-app/target/site/index.html
+![image](mvn-site-01.png)
+
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
-Project name: MyJavaMavenCalculateWebApp
+Project name: **MyJavaMavenCalculateWebApp**
+
 Execute every mvn goal one by one defined in Build Section Step: "Invoke top-level Maven targets"
 
 ![image](jenkins-mvn-01.png)
 
 ![image](jenkins-mvn-02.png)
 
-### 2.2 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
-Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
-### 2.3 Create and Configure a Freestyle Jenkins Project, using Azure App Service plugin
-Project name: MyJavaMavenCalculateWebApp-AzureAppService
-### 2.4 Create and Configure a Pipeline Jenkins Project
-Project name: MyJavaMavenCalculateWebApp-Pipeline
+### 2.2 Create and Configure a Pipeline Jenkins Project
+Project name: **MyJavaMavenCalculateWebApp-Pipeline**
 
 Execute the Jenkins Pipeline Script File: Jenkinsfile
+
+![image](jenkins-pipeline-01.png)
+
+![image](jenkins-pipeline-02.png)
+
+### 2.3 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
+Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
+
+### 2.4 Create and Configure a Freestyle Jenkins Project, using Azure App Service plugin
+Project name: MyJavaMavenCalculateWebApp-AzureAppService
+
 
 ## 3. Containerize Your Web App
 
