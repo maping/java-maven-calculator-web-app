@@ -245,11 +245,11 @@ $ docker push <Your-Docker-ID>/calculator
 ## 5. Deploy to Your Azure Web App using Container Image in ACR
 1. Create a Container Registry on Azure
 2. Push your local image to ACR:
-   ```
-   docker login <Your-ACR-Login-Server> -u <Your-ACR-Username> -p <Your-ACR-Password>
-   docker tag calculator <Your-ACR-Login-Server>/calculator
-   docker push <Your-ACR-Login-Server>/calculator
-   ```
+```
+$ docker login <Your-ACR-Login-Server> -u <Your-ACR-Username> -p <Your-ACR-Password>
+$ docker tag calculator <Your-ACR-Login-Server>/calculator
+$ docker push <Your-ACR-Login-Server>/calculator
+```
 3. Create a Web App in Linux on Azure
 4. In Docker Container settings of Web App, fill in image name, server URL, username and password of your ACR.
 5. Save the changes and you'll be able to access the web app in a few seconds.
