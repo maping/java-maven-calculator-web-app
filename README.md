@@ -195,10 +195,10 @@ Execute the Jenkins Pipeline Script File: Jenkinsfile
 ![image](jenkins-pipeline-02.png)
 
 ### 2.3 Create and Configure a Freestyle Jenkins Project, using Publish Over FTP plugin
-Project name: MyJavaMavenCalculateWebApp-AzureAppService-FTP
+Project name: **MyJavaMavenCalculateWebApp-AzureAppService-FTP**
 
 ### 2.4 Create and Configure a Freestyle Jenkins Project, using Azure App Service plugin
-Project name: MyJavaMavenCalculateWebApp-AzureAppService
+Project name: **MyJavaMavenCalculateWebApp-AzureAppService**
 
 
 ## 3. Containerize Your Web App
