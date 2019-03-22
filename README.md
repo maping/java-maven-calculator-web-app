@@ -195,16 +195,13 @@ What is the new development version for "Calculator Web"? (com.qianhong.javaweba
 [INFO] Not generating release POMs
 ...
 ```
-
+Now, release java-maven-calculator-web-app 1.0 to your Nexus. 
 ```console
 $ mvn release:perform
+...
+[INFO] Uploaded to releases: http://localhost:8081/repository/maven-releases/com/qianhong/javawebapp/java-maven-calculator-web-app/1.0/java-maven-calculator-web-app-1.0-javadoc.jar (30 kB at 722 kB/s)
+...
 ```
-
-Visit http://localhost:8081/ with admin/admin123.
-
-Search calculator, click Browse SNAPSHOT(s)
-
-![image](nexus-browse-01.png)
 
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
