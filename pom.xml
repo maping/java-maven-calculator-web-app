@@ -3,7 +3,7 @@
     <groupId>com.qianhong.javawebapp</groupId>
     <artifactId>java-maven-calculator-web-app</artifactId>
     <packaging>war</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <name>Calculator Web</name>
     <description>A Java Maven Calculator Web Application Writen By Java, Built By Maven, CI/CD By Jenkins</description>
     <url>http://maven.apache.org</url>
@@ -19,7 +19,7 @@
         <connection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</connection>
         <developerConnection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</developerConnection>
         <url>https://github.com/maping/java-maven-calculator-web-app.git</url>
-      <tag>java-maven-calculator-web-app-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <distributionManagement>
