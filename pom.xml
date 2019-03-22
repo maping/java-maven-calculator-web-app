@@ -69,6 +69,11 @@
             <version>4.5.6</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -229,8 +234,8 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <username>maping</username>
-                    <password>Map#9876</password>
+                    <username>username</username>
+                    <password>password</password>
                     <tagBase>https://github.com/maping/java-maven-calculator-web-app.git</tagBase>
                     <branchBase>https://github.com/maping/java-maven-calculator-web-app.git</branchBase>
                 </configuration>
