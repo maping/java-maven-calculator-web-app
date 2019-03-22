@@ -174,6 +174,38 @@ Search calculator, click Browse SNAPSHOT(s)
 
 ![image](nexus-browse-01.png)
 
+### 1.11 Release X.0 version (Optional)
+Before Release a version, you must commit and push all your code to remote repo.
+```console
+$ mvn release:prepare
+...
+[INFO] --- maven-release-plugin:2.5.3:prepare (default-cli) @ java-maven-calculator-web-app ---
+[INFO] Resuming release from phase 'scm-check-modifications'
+[INFO] Verifying that there are no local modifications...
+[INFO]   ignoring changes on: **/pom.xml.releaseBackup, **/pom.xml.next, **/pom.xml.tag, **/pom.xml.branch, **/release.properties, **/pom.xml.backup
+[INFO] Executing: /bin/sh -c cd /Users/maping/code/java-maven-calculator-web-app && git rev-parse --show-toplevel
+[INFO] Working directory: /Users/maping/code/java-maven-calculator-web-app
+[INFO] Executing: /bin/sh -c cd /Users/maping/code/java-maven-calculator-web-app && git status --porcelain .
+[INFO] Working directory: /Users/maping/code/java-maven-calculator-web-app
+[INFO] Checking dependencies and plugins for snapshots ...
+What is the release version for "Calculator Web"? (com.qianhong.javawebapp:java-maven-calculator-web-app) 1.0: : 
+What is SCM release tag or label for "Calculator Web"? (com.qianhong.javawebapp:java-maven-calculator-web-app) java-maven-calculator-web-app-1.0: : 
+What is the new development version for "Calculator Web"? (com.qianhong.javawebapp:java-maven-calculator-web-app) 1.1-SNAPSHOT: : 
+[INFO] Transforming 'Calculator Web'...
+[INFO] Not generating release POMs
+...
+```
+
+```console
+$ mvn release:perform
+```
+
+Visit http://localhost:8081/ with admin/admin123.
+
+Search calculator, click Browse SNAPSHOT(s)
+
+![image](nexus-browse-01.png)
+
 ## 2. Automaticly Build, Test, and Deploy By Jenkins
 
 ### 2.1 Create and Configure a Freestyle Jenkins Project
