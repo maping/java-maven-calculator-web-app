@@ -85,7 +85,7 @@ $ mvn clean integration-test
 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
 ```
 ### 1.6 Deploy Your Web App to An Existed Tomcat 8x
-Please install a Tomcat8x on your machine, after that, you need change pom.xml, point to your own Tomcat 8x.
+Please install a Tomcat 8x on your machine, after that, you need change pom.xml, point to your own Tomcat 8x.
 ```console
 $ mvn cargo:run
 [INFO] [talledLocalContainer] 14-Mar-2019 10:10:19.495 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
