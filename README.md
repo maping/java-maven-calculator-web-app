@@ -286,5 +286,5 @@ $ docker push <Your-ACR-Login-Server>/calculator
 ## Reference
 - [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/)
 
-  commit url
- 
+  Commit URL
+  
