@@ -11,6 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
+- task: SonarCloudAnalyze@1
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
