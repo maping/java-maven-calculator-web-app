@@ -10,4 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'FreeSonarCloud'
+    organization: 'jefffordevops'
+    scannerMode: 'Other'
 - task: Maven@3
