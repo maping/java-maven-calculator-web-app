@@ -1,4 +1,6 @@
 # A Java Maven Calculator Web App
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmaping%2Fjava-maven-calculator-web-app&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=PAGE+VIEWS&edge_flat=false)](https://hits.seeyoufarm.com)
+
 A Java calculator web app, build by Maven, CI/CD by Jenkins.
 
 ![image](realworld-pipeline-flow.png)
