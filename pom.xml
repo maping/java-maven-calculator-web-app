@@ -27,12 +27,12 @@
         <repository>
             <id>releases</id>
             <name>Nexus Release Repository</name>
-            <url>http://localhost:8081/repository/maven-releases/</url>
+            <url>http://34.227.30.172/:8081/repository/sample-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Nexus Snapshot Repository</name>
-            <url>http://localhost:8081/repository/maven-snapshots/</url>
+            <url>http://34.227.30.172/:8081/repository/sample-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
