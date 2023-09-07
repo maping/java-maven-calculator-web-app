@@ -17,9 +17,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</connection>
-        <developerConnection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</developerConnection>
-        <url>https://github.com/maping/java-maven-calculator-web-app.git</url>
+        <connection>scm:git:https://github.com/chyiphing/java-maven-calculator-web-app.git</connection>
+        <developerConnection>scm:git:https://github.com/chyiphing/java-maven-calculator-web-app.git</developerConnection>
+        <url>https://github.com/chyiphing/java-maven-calculator-web-app.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -178,11 +178,11 @@
                 <configuration>
                     <container>
                         <containerId>tomcat8x</containerId>
-                        <home>/Users/maping/apache/tomcat</home>
+                        <home>C:\Program Files\Apache Software Foundation\Tomcat 8.5</home>
                     </container>
                     <configuration>
                         <type>existing</type>
-                        <home>/Users/maping/apache/tomcat</home>
+                        <home>C:\Program Files\Apache Software Foundation\Tomcat 8.5</home>
                     </configuration>
                 </configuration>
             </plugin>
