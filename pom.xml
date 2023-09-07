@@ -17,8 +17,8 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</connection>
-        <developerConnection>scm:git:https://github.com/maping/java-maven-calculator-web-app.git</developerConnection>
+        <connection>scm:git:https://github.com/chyiphing/java-maven-calculator-web-app.git</connection>
+        <developerConnection>scm:git:https://github.com/chyiphing/java-maven-calculator-web-app.git</developerConnection>
         <url>https://github.com/chyiphing/java-maven-calculator-web-app.git</url>
         <tag>HEAD</tag>
     </scm>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
-            <version>3.8.0</version>
+            <version>3.1.0</version>
         </dependency>
     </dependencies>
 
@@ -85,7 +85,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <source>${}</source>
+                    <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
